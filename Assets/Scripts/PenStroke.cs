@@ -23,12 +23,15 @@ public class PenStroke : MonoBehaviour
             isDrawing = true;
             // Create new stroke
             currentStroke = Instantiate(strokePrefab);
+
         }
         
         if(Input.GetButtonUp("Fire1"))
         {
             isDrawing = false;
         }
+
+		//print(isDrawing);
 
         // While the pen is drawing
         if (isDrawing) {
