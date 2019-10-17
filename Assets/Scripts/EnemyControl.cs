@@ -21,10 +21,19 @@ public class EnemyControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(ExitPosition.position);
+        //Debug.Log(ExitPosition.position);
         if (health > 0)
         {
             transform.position = Vector3.MoveTowards(transform.position, ExitPosition.localPosition, speed);
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "Player")
+        {
+            Debug.Log("Hit Player");
+            Destroy(this.gameObject);
         }
     }
 }
