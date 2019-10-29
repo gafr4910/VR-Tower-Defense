@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class SpawnEnemy : MonoBehaviour
 {
-    public Transform player;
+    public GameObject Enemy;
 
-    public int health = 10;
+    private int PlayerHealth;
+
+    public int SpawnRate;
+
+    private int NumberOfEnemies;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +21,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(NumberOfEnemies < 5)
+        {
+            Instantiate(Enemy);
+       
+        }
         
     }
 }
