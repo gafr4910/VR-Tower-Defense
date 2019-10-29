@@ -8,14 +8,17 @@ public class EnemyControl : MonoBehaviour
     public float speed = 0.1f;
     public int health = 1;
     public Transform ExitPosition;
+    public Transform StartPosition;
 
     private Transform EnemyPos;
     // Start is called before the first frame update
     void Start()
     {
-        //ExitPosition = GameObject.FindGameObjectWithTag("Exit").transform;
+        ExitPosition = GameObject.FindGameObjectWithTag("Exit").transform;
 
-        //transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+        StartPosition = GameObject.FindGameObjectWithTag("Entrance").transform;
+
+        transform.position = new Vector3(0.0f, 1.0f, 140.0f);
     }
 
     // Update is called once per frame
@@ -25,6 +28,7 @@ public class EnemyControl : MonoBehaviour
         if (health > 0)
         {
             transform.position = Vector3.MoveTowards(transform.position, ExitPosition.localPosition, speed);
+            //transform.position = Vector3.MoveTowards(StartPosition.localPosition, ExitPosition.localPosition, speed);
         }
     }
 
