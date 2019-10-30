@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Transform player;
+
+    public int health = 10;
     // Start is called before the first frame update
     void Start()
     {
