@@ -9,28 +9,40 @@ public class SpawnEnemy : MonoBehaviour
 
     private int PlayerHealth;
 
-    public int SpawnRate;
+    public float SpawnRate;
 
-    private int NumberOfEnemies;
+    public int NumberOfEnemies;
+
+    private int CurrentEnemies = 0;
+
+    private float spawnTimer;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //SpawnRate = 3f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(NumberOfEnemies < 5)
-        {
-            Instantiate(Enemy);
-            NumberOfEnemies++;
-            
+        spawnTimer += Time.deltaTime;
 
+        if(spawnTimer >= SpawnRate && CurrentEnemies < NumberOfEnemies )
+        {
+            SpawnEnemies();
+            spawnTimer = 0f;
+            CurrentEnemies++;
         }
         
     }
 
-    
+    void SpawnEnemies()
+    {
+
+        Instantiate(Enemy);
+
+    }
+
+
 }

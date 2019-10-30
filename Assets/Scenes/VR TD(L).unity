@@ -749,6 +749,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2469011594409846154, guid: 9342d2ea89ac14d83b9b99a81121f2d8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5522931554614898419, guid: 9342d2ea89ac14d83b9b99a81121f2d8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1066,31 +1071,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8158433561412456427, guid: cdd25694e888802408bdcdd423f7d5c8,
-        type: 3}
-      propertyPath: m_Height
-      value: 0.4860916
-      objectReference: {fileID: 0}
-    - target: {fileID: -8158433561412456427, guid: cdd25694e888802408bdcdd423f7d5c8,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 1.047168
-      objectReference: {fileID: 0}
-    - target: {fileID: -8158433561412456427, guid: cdd25694e888802408bdcdd423f7d5c8,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.19286379
-      objectReference: {fileID: 0}
-    - target: {fileID: -8158433561412456427, guid: cdd25694e888802408bdcdd423f7d5c8,
-        type: 3}
-      propertyPath: m_Center.x
-      value: 0.001163125
-      objectReference: {fileID: 0}
-    - target: {fileID: -8158433561412456427, guid: cdd25694e888802408bdcdd423f7d5c8,
-        type: 3}
-      propertyPath: m_Center.z
-      value: -0.0015570223
-      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: cdd25694e888802408bdcdd423f7d5c8, type: 3}
       propertyPath: m_Name
       value: mace
@@ -1138,6 +1118,31 @@ PrefabInstance:
     - target: {fileID: 400000, guid: cdd25694e888802408bdcdd423f7d5c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8158433561412456427, guid: cdd25694e888802408bdcdd423f7d5c8,
+        type: 3}
+      propertyPath: m_Height
+      value: 0.4860916
+      objectReference: {fileID: 0}
+    - target: {fileID: -8158433561412456427, guid: cdd25694e888802408bdcdd423f7d5c8,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1.047168
+      objectReference: {fileID: 0}
+    - target: {fileID: -8158433561412456427, guid: cdd25694e888802408bdcdd423f7d5c8,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.19286379
+      objectReference: {fileID: 0}
+    - target: {fileID: -8158433561412456427, guid: cdd25694e888802408bdcdd423f7d5c8,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.001163125
+      objectReference: {fileID: 0}
+    - target: {fileID: -8158433561412456427, guid: cdd25694e888802408bdcdd423f7d5c8,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.0015570223
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdd25694e888802408bdcdd423f7d5c8, type: 3}
@@ -1428,9 +1433,10 @@ GameObject:
   - component: {fileID: 1583986146}
   - component: {fileID: 1583986145}
   - component: {fileID: 1583986144}
+  - component: {fileID: 1583986147}
   m_Layer: 0
   m_Name: Entrance
-  m_TagString: Untagged
+  m_TagString: Entrance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1508,6 +1514,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583986142}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1583986147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583986142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20392e12234ba4df0afa3be70d143fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 349391990355767104, guid: 62be257c8d7f04859bebe8b973954db3, type: 3}
+  SpawnRate: 3
+  NumberOfEnemies: 3
 --- !u!1 &1690024209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1522,7 +1543,7 @@ GameObject:
   - component: {fileID: 1690024211}
   m_Layer: 0
   m_Name: Exit
-  m_TagString: Untagged
+  m_TagString: Exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1615,7 +1636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1868831924
 Transform:
   m_ObjectHideFlags: 0
@@ -1647,7 +1668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1890137309
 Transform:
   m_ObjectHideFlags: 0
