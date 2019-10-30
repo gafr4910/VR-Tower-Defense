@@ -792,7 +792,7 @@ PrefabInstance:
     - target: {fileID: 5522931554614898419, guid: 9342d2ea89ac14d83b9b99a81121f2d8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5522931554614898419, guid: 9342d2ea89ac14d83b9b99a81121f2d8,
         type: 3}
@@ -1075,13 +1075,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: mace
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cdd25694e888802408bdcdd423f7d5c8, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdd25694e888802408bdcdd423f7d5c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdd25694e888802408bdcdd423f7d5c8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.869
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdd25694e888802408bdcdd423f7d5c8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1105,7 +1109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdd25694e888802408bdcdd423f7d5c8, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdd25694e888802408bdcdd423f7d5c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1651,7 +1655,7 @@ Transform:
   - {fileID: 1058489951}
   - {fileID: 516911262}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1890137308
 GameObject:
@@ -1683,7 +1687,7 @@ Transform:
   - {fileID: 1546747991}
   - {fileID: 1333878731}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2028332716
 GameObject:
