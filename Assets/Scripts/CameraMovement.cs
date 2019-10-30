@@ -7,8 +7,8 @@ public class CameraMovement : MonoBehaviour
 
     public GameObject parent;
     public GameObject teleportPreview;
+    public GameObject mocapObject;
     private bool previewExists = false;
-    private bool isGrabbing = false;
     private int targetLayer = 1 << 8; // Layer 8 (targets)
 
 
@@ -60,34 +60,6 @@ public class CameraMovement : MonoBehaviour
             this.transform.position = new Vector3(teleportPreview.transform.position.x, this.transform.position.y, teleportPreview.transform.position.z);
             previewExists = false;
         }
-
-        // if(Input.GetAxis("Fire1") != 0)
-        // {
-        //     //Debug.Log("h");
-        //     RaycastHit hit;
-        //     if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, targetLayer)) {
-        //         //Debug.Log("?");
-        //         if(isGrabbing)
-        //         {
-        //             Vector3 grabPos = transform.position + transform.forward * 3;
-        //             hit.collider.transform.position = grabPos;
-        //         }
-        //         else if(hit.collider.tag == "Grabbable")
-        //         {
-        //             //Debug.Log("yep");
-        //             Vector3 grabPos = transform.position + transform.forward * 3;
-        //             hit.collider.transform.position = grabPos;
-        //             isGrabbing = true;
-        //         }
-        //     }
-        // }
-        // else if(!Input.GetKeyDown(KeyCode.H))
-        // {
-        //     if(isGrabbing)
-        //     {
-        //         isGrabbing = false;
-        //     }
-        // }
     }
 }
 
