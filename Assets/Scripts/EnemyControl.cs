@@ -18,7 +18,7 @@ public class EnemyControl : MonoBehaviour
 
         StartPosition = GameObject.FindGameObjectWithTag("Entrance").transform;
 
-        transform.position = new Vector3(0.0f, 1.0f, 140.0f);
+        transform.position = new Vector3(11.0f, 1.0f, 1.0f);
     }
 
     // Update is called once per frame

@@ -37,20 +37,20 @@ public class SpawnEnemy : MonoBehaviour
             spawnTimer = 0f;
             CurrentEnemies++;
         }
-        else
-        {
-            Level++;
-            SpawnRate *= 2;
-            CurrentEnemies = 0;
-        }
-        //level2
-        if(spawnTimer >= SpawnRate && CurrentEnemies < NumberOfEnemies && Level == 2)
-        {
-            SpawnEnemies();
-            spawnTimer = 0f;
-            CurrentEnemies++;
-        }
-        
+        //else
+        //{
+        //    Level++;
+        //    SpawnRate *= 2;
+        //    CurrentEnemies = 0;
+        //}
+        ////level2
+        //if (spawnTimer >= SpawnRate && CurrentEnemies < NumberOfEnemies && Level == 2)
+        //{
+        //    SpawnEnemies();
+        //    spawnTimer = 0f;
+        //    CurrentEnemies++;
+        //}
+
     }
 
     void SpawnEnemies()
