@@ -18,26 +18,26 @@ public class EnemyControl : MonoBehaviour
 
         StartPosition = GameObject.FindGameObjectWithTag("Entrance").transform;
 
-        transform.position = new Vector3(0.0f, 1.0f, 140.0f);
+        transform.position = new Vector3(11.0f, 1.0f, 1.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(ExitPosition.position);
+        
         if (health > 0)
         {
             transform.position = Vector3.MoveTowards(transform.position, ExitPosition.localPosition, speed);
-            //transform.position = Vector3.MoveTowards(StartPosition.localPosition, ExitPosition.localPosition, speed);
+            
         }
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.name == "Player")
-        {
-            Debug.Log("Hit Player");
-            Destroy(this.gameObject);
-        }
-    }
+    //void OnCollisionEnter(Collision collision)
+    //{
+    //    if(collision.gameObject.tag == "Weapon")
+    //    {
+    //        Debug.Log("Enemy hit");
+    //        Destroy(this.gameObject);
+    //    }
+    //}
 }
