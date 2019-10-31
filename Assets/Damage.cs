@@ -23,7 +23,7 @@ public class Damage : MonoBehaviour
         //all projectile colliding game objects should be tagged "Enemy" or whatever in inspector but that tag must be reflected in the below if conditional
         if (col.gameObject.tag == "Enemy")
         {
-            Destroy(col.gameObject, 2.0f);
+            Destroy(col.gameObject);
 
         }
 
