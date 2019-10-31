@@ -10,5 +10,8 @@ https://assetstore.unity.com/packages/3d/environments/fantasy/mega-fantasy-props
 https://assetstore.unity.com/packages/3d/props/weapons/fantasy-heavy-weapon-pack-11325
 https://assetstore.unity.com/packages/3d/characters/humanoids/zombie-30232
 
+Video Link:
+https://drive.google.com/file/d/1hig-kE3iqLjYFhKzug9vo81N6PEeHMa1/view?usp=sharing
+
 Made by:
 Jonathan Allen, Liam Slyne, Gavin Frausto
