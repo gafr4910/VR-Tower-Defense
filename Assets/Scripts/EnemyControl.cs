@@ -6,7 +6,7 @@ public class EnemyControl : MonoBehaviour
 {
 
     public float speed = 0.1f;
-    public int health = 1;
+    public int health = 10;
     public Transform ExitPosition;
     public Transform StartPosition;
 
@@ -43,14 +43,8 @@ public class EnemyControl : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, ExitPosition.localPosition, speed);
             
         }
+        
     }
 
-    //void OnCollisionEnter(Collision collision)
-    //{
-    //    if(collision.gameObject.tag == "Weapon")
-    //    {
-    //        Debug.Log("Enemy hit");
-    //        Destroy(this.gameObject);
-    //    }
-    //}
+   
 }
