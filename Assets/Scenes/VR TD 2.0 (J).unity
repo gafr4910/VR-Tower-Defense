@@ -2588,6 +2588,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Entrance
       objectReference: {fileID: 0}
+    - target: {fileID: 4013472950785982755, guid: 7e27b04a2c2fb421086ac1fdb5f04491,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1784209123813109163, guid: 7e27b04a2c2fb421086ac1fdb5f04491,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2659,6 +2664,56 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562,
         type: 3}
+    - target: {fileID: 8123858429669421489, guid: 7e27b04a2c2fb421086ac1fdb5f04491,
+        type: 3}
+      propertyPath: SpawnRate1
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123858429669421489, guid: 7e27b04a2c2fb421086ac1fdb5f04491,
+        type: 3}
+      propertyPath: SpawnRate2
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123858429669421489, guid: 7e27b04a2c2fb421086ac1fdb5f04491,
+        type: 3}
+      propertyPath: SpawnRate3
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123858429669421489, guid: 7e27b04a2c2fb421086ac1fdb5f04491,
+        type: 3}
+      propertyPath: SpawnRate4
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123858429669421489, guid: 7e27b04a2c2fb421086ac1fdb5f04491,
+        type: 3}
+      propertyPath: SpawnRate5
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123858429669421489, guid: 7e27b04a2c2fb421086ac1fdb5f04491,
+        type: 3}
+      propertyPath: NumberOfEnemies1
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123858429669421489, guid: 7e27b04a2c2fb421086ac1fdb5f04491,
+        type: 3}
+      propertyPath: NumberOfEnemies2
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123858429669421489, guid: 7e27b04a2c2fb421086ac1fdb5f04491,
+        type: 3}
+      propertyPath: NumberOfEnemies3
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123858429669421489, guid: 7e27b04a2c2fb421086ac1fdb5f04491,
+        type: 3}
+      propertyPath: NumberOfEnemies4
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123858429669421489, guid: 7e27b04a2c2fb421086ac1fdb5f04491,
+        type: 3}
+      propertyPath: NumberOfEnemies5
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 1479045546145177176, guid: 7e27b04a2c2fb421086ac1fdb5f04491,
         type: 3}
       propertyPath: m_Enabled
