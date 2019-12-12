@@ -1,6 +1,7 @@
 How To build Stereo180Video Sample for Android
 
 Step 1: Copy Assets/Oculus/SampleFramework/Usage/Stereo180Video/StreamingAssets to Assets/StreamingAssets
+<<<<<<< HEAD
 Step 2: Rename Assets/Oculus/SampleFramework/Usage/Stereo180Video/Plugins/Android/java/com/oculus/videoplayer/MyVideoPlayer.java.removeme to MyVideoPlayer.java
 Step 3: For the audio360 and audio360-exo28 plugins in Assets/Oculus/SampleFramework/Usage/Stereo180Video/Plugins/Android/Audio360/, make sure the Android checkbox is checked.
 Step 4: Open PlayerSettings, in the "Publishing Settings" section, change the Build System to Gradle. If you don't already have a custom gradle template, check the "Custom Gradle Template" checkbox.
@@ -20,3 +21,6 @@ Step 6b:
 		In android { ... } add `sourceSets.main.java.srcDir "$projectDir/../../Assets/Oculus/SampleFramework/Usage/Stereo180Video/Plugins/Android/java"`
 
 	You should now be able to build and run the Sample.
+=======
+Step 2: From the Oculus drop down menu, select Video > Enable Native Android Video Player
+>>>>>>> master

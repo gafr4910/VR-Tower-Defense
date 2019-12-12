@@ -22,15 +22,15 @@ public class EnemyControl : MonoBehaviour
         StartPosition = GameObject.FindGameObjectWithTag("Entrance").transform;
         if(randomIndex == 1)
         {
-            transform.position = new Vector3(-190.0f, 0.2f, -1.0f);
+            transform.position = new Vector3(-90.0f, 0.2f, -1.0f);
         }
         else if(randomIndex == 2)
         {
-            transform.position = new Vector3(-190.0f, 0.2f, 1.0f);
+            transform.position = new Vector3(-90.0f, 0.2f, 1.0f);
         }
         else if(randomIndex == 3)
         {
-            transform.position = new Vector3(-190.0f, 0.2f, 3.0f);
+            transform.position = new Vector3(-90.0f, 0.2f, 3.0f);
         }
     }
 

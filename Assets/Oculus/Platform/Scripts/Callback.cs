@@ -33,7 +33,18 @@ namespace Oculus.Platform
     #endregion 
 
     #region Adding and running request handlers
+<<<<<<< HEAD
     internal static void AddRequest(Request request) {
+=======
+    internal static void AddRequest(Request request)
+    {
+      if (request.RequestID == 0)
+      {
+        // An early out error happened in the C SDK. Do not add it to the mapping of callbacks
+        Debug.LogError("An unknown error occurred. Request failed.");
+        return;
+      }
+>>>>>>> master
       requestIDsToRequests[request.RequestID] = request;
     }
 
@@ -144,7 +155,11 @@ namespace Oculus.Platform
     internal static void HandleMessage(Message msg)
     {
       Request request;
+<<<<<<< HEAD
       if (requestIDsToRequests.TryGetValue(msg.RequestID, out request)) {
+=======
+      if (msg.RequestID != 0 && requestIDsToRequests.TryGetValue(msg.RequestID, out request)) {
+>>>>>>> master
         try {
           request.HandleMessage(msg);
         } finally {

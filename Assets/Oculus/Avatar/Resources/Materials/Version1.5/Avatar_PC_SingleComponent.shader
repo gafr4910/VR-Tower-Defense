@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //
 // OvrAvatar PC single component shader
 // For use on non-expressive face meshes and other components
@@ -6,6 +7,16 @@
 // Mobile vertex/fragment shader is recommended for use on mobile platforms for performance
 //
 // Uses transparent queue for fade effects
+=======
+//
+// OvrAvatar PC single component shader
+// For use on non-expressive face meshes and other components
+//
+// Unity Surface Shader implementation
+// Mobile vertex/fragment shader is recommended for use on mobile platforms for performance
+//
+// Uses transparent queue for fade effects
+>>>>>>> master
 //
 
 Shader "OvrAvatar/Avatar_PC_SingleComponent"
@@ -22,10 +33,17 @@ Shader "OvrAvatar/Avatar_PC_SingleComponent"
 
         _DiffuseIntensity("Diffuse Intensity", Range(0.0,1.0)) = 0.3
         _SmoothnessMultiplier("Smoothness Multiplier", Range(0.0,1.0)) = 1.0
+<<<<<<< HEAD
         _MetallicMultiplier("Metallic Multiplier", Range(0.0,1.0)) = 1.0
         _RimIntensity("Rim Intensity", Range(0.0,10.0)) = 5.0
 
         [HideInInspector] _SrcBlend("", Float) = 1
+=======
+        _MetallicMultiplier("Metallic Multiplier", Range(0.0,1.0)) = 1.0
+        _RimIntensity("Rim Intensity", Range(0.0,10.0)) = 5.0
+
+        [HideInInspector] _SrcBlend("", Float) = 1
+>>>>>>> master
         [HideInInspector] _DstBlend("", Float) = 0
     }
     
@@ -34,15 +52,23 @@ Shader "OvrAvatar/Avatar_PC_SingleComponent"
         Blend [_SrcBlend] [_DstBlend]
         Cull Back
         CGPROGRAM
+<<<<<<< HEAD
 #pragma surface surf Standard keepalpha fullforwardshadows
 #pragma target 3.0
 #pragma fragmentoption ARB_precision_hint_fastest
 #include "UnityCG.cginc"
+=======
+#pragma surface surf Standard keepalpha fullforwardshadows
+#pragma target 3.0
+#pragma fragmentoption ARB_precision_hint_fastest
+#include "UnityCG.cginc"
+>>>>>>> master
 
         sampler2D _MainTex;
         sampler2D _NormalMap;
         sampler2D _RoughnessMap;
 
+<<<<<<< HEAD
         half4 _BaseColor;
         half _Dimmer;
         half _Alpha;
@@ -50,6 +76,15 @@ Shader "OvrAvatar/Avatar_PC_SingleComponent"
         half _DiffuseIntensity;
         half _SmoothnessMultiplier;
         half _MetallicMultiplier;
+=======
+        half4 _BaseColor;
+        half _Dimmer;
+        half _Alpha;
+
+        half _DiffuseIntensity;
+        half _SmoothnessMultiplier;
+        half _MetallicMultiplier;
+>>>>>>> master
         half _RimIntensity;
 
         struct Input
@@ -63,6 +98,7 @@ Shader "OvrAvatar/Avatar_PC_SingleComponent"
 
         void surf(Input IN, inout SurfaceOutputStandard o)
         {
+<<<<<<< HEAD
             // Diffuse texture sample
             half4 albedoColor = tex2D(_MainTex, IN.uv_MainTex);
 
@@ -77,6 +113,22 @@ Shader "OvrAvatar/Avatar_PC_SingleComponent"
 
             // Normal/Light/View calculations
             half NdotL = saturate(dot(WorldNormalVector(IN, o.Normal), _WorldSpaceLightPos0.xyz));
+=======
+            // Diffuse texture sample
+            half4 albedoColor = tex2D(_MainTex, IN.uv_MainTex);
+
+            // Unpack normal map
+#if (UNITY_VERSION >= 20171)
+            o.Normal = UnpackNormal(tex2D(_NormalMap, IN.uv_MainTex));
+#else
+            o.Normal = tex2D(_NormalMap, IN.uv_MainTex) * 2.0 - 1.0;
+#endif
+            // Roughness contains metallic in r, smoothness in a
+            half4 roughnessTex = tex2D(_RoughnessMap, IN.uv_MainTex);
+
+            // Normal/Light/View calculations
+            half NdotL = saturate(dot(WorldNormalVector(IN, o.Normal), _WorldSpaceLightPos0.xyz));
+>>>>>>> master
             half VdotN = saturate(dot(normalize(IN.viewDir), o.Normal));
 
             // Color space conversions if we are in linear
@@ -99,6 +151,7 @@ Shader "OvrAvatar/Avatar_PC_SingleComponent"
             // Global dimmer
             o.Albedo *= _Dimmer;
 
+<<<<<<< HEAD
             // Convert back to linear color space if we are in linear
 #if !defined(UNITY_COLORSPACE_GAMMA)
             o.Albedo = GammaToLinearSpace(o.Albedo);
@@ -107,6 +160,16 @@ Shader "OvrAvatar/Avatar_PC_SingleComponent"
 
             // Global alpha
             o.Alpha = albedoColor.a * _Alpha;
+=======
+            // Convert back to linear color space if we are in linear
+#if !defined(UNITY_COLORSPACE_GAMMA)
+            o.Albedo = GammaToLinearSpace(o.Albedo);
+#endif
+            o.Albedo = saturate(o.Albedo);
+
+            // Global alpha
+            o.Alpha = albedoColor.a * _Alpha;
+>>>>>>> master
         }
         ENDCG
     }

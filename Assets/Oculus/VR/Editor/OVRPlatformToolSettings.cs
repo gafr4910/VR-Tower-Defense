@@ -35,6 +35,7 @@ namespace Assets.Oculus.VR.Editor
 			}
 		}
 
+<<<<<<< HEAD
 		public static string AppToken
 		{
 			get
@@ -50,6 +51,8 @@ namespace Assets.Oculus.VR.Editor
 			}
 		}
 
+=======
+>>>>>>> master
 		public static string ReleaseNote
 		{
 			get
@@ -216,9 +219,12 @@ namespace Assets.Oculus.VR.Editor
 		private string[] appIDs = new string[(int)OVRPlatformTool.TargetPlatform.None];
 
 		[SerializeField]
+<<<<<<< HEAD
 		private string[] appTokens = new string[(int)OVRPlatformTool.TargetPlatform.None];
 
 		[SerializeField]
+=======
+>>>>>>> master
 		private string[] releaseNotes = new string[(int)OVRPlatformTool.TargetPlatform.None];
 
 		[SerializeField]

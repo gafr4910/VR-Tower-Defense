@@ -314,6 +314,7 @@ public class OVRBundleManager
 					// Each asset is keyed by full path as a unique identifier
 					if (!uniqueAssetInSceneBundle.ContainsKey(asset))
 					{
+<<<<<<< HEAD
 						uniqueAssetInSceneBundle[asset] = assetParent;
 
 						if (assetParent != "resources")
@@ -323,6 +324,21 @@ public class OVRBundleManager
 								extToAssetList[ext] = new List<string>();
 							}
 							extToAssetList[ext].Add(asset);
+=======
+						var assetObject = (UnityEngine.Object)AssetDatabase.LoadAssetAtPath(asset, typeof(UnityEngine.Object));
+						if (assetObject == null || (assetObject.hideFlags & HideFlags.DontSaveInBuild) == 0)
+						{
+							uniqueAssetInSceneBundle[asset] = assetParent;
+
+							if (assetParent != "resources")
+							{
+								if (!extToAssetList.ContainsKey(ext))
+								{
+									extToAssetList[ext] = new List<string>();
+								}
+								extToAssetList[ext].Add(asset);
+							}
+>>>>>>> master
 						}
 					}
 				}
@@ -554,6 +570,34 @@ public class OVRBundleManager
 		return false;
 	}
 
+<<<<<<< HEAD
+=======
+	public static bool UninstallAPK()
+	{
+		OVRBundleTool.PrintLog("Uninstalling Application . . .");
+
+		OVRADBTool adbTool = new OVRADBTool(OVRConfig.Instance.GetAndroidSDKPath());
+		if (adbTool.isReady)
+		{
+			string output, error;
+			string packageName = Application.identifier + ".transition";
+			string[] appStartCommand = { "-d shell", "pm uninstall", packageName };
+			if (adbTool.RunCommand(appStartCommand, null, out output, out error) == 0)
+			{
+				OVRBundleTool.PrintSuccess();
+				return true;
+			}
+
+			OVRBundleTool.PrintError("Failed to uninstall APK.");
+		}
+		else
+		{
+			OVRBundleTool.PrintError(ADB_TOOL_INITIALIZE_ERROR);
+		}
+		return false;
+	}
+
+>>>>>>> master
 	public static void DeleteRemoteAssetBundles()
 	{
 		OVRADBTool adbTool = new OVRADBTool(OVRConfig.Instance.GetAndroidSDKPath());

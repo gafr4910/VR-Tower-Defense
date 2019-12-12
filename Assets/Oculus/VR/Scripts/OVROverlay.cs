@@ -114,6 +114,12 @@ public class OVROverlay : MonoBehaviour
 	//Warning: Developers should only use this supersample setting if they absolutely have the budget and need for it. It is extremely expensive, and will not be relevant for most developers.
 	public bool useExpensiveSuperSample = false;
 
+<<<<<<< HEAD
+=======
+	//Property that can hide overlays when required. Should be false when present, true when hidden.
+	public bool hidden = false;
+
+>>>>>>> master
 	/// <summary>
 	/// If true, the layer will be created as an external surface. externalSurfaceObject contains the Surface object. It's effective only on Android.
 	/// </summary>
@@ -667,7 +673,12 @@ public class OVROverlay : MonoBehaviour
 			isExternalSurface ? System.IntPtr.Zero : layerTextures[0].appTexturePtr,
 			isExternalSurface ? System.IntPtr.Zero : layerTextures[rightEyeIndex].appTexturePtr,
 			layerId, frameIndex, pose.flipZ().ToPosef(), scale.ToVector3f(), layerIndex, (OVRPlugin.OverlayShape)currentOverlayShape,
+<<<<<<< HEAD
 			overrideTextureRectMatrix, textureRectMatrix, overridePerLayerColorScaleAndOffset, colorScale, colorOffset, useExpensiveSuperSample);
+=======
+			overrideTextureRectMatrix, textureRectMatrix, overridePerLayerColorScaleAndOffset, colorScale, colorOffset, useExpensiveSuperSample,
+			hidden);
+>>>>>>> master
 
 		prevOverlayShape = currentOverlayShape;
 

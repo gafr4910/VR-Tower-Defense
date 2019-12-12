@@ -182,6 +182,15 @@ namespace Oculus.Platform
       return dt.AddSeconds(seconds_since_the_one_true_epoch).ToLocalTime();
     }
 
+<<<<<<< HEAD
+=======
+    public static ulong DateTimeToNative(DateTime dt) {
+      var universal = (dt.Kind != DateTimeKind.Utc) ? dt.ToUniversalTime() : dt;
+      var epochStart = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+      return (ulong) (universal - epochStart).TotalSeconds;
+    }
+
+>>>>>>> master
     public static byte[] BlobFromNative(uint size, IntPtr pointer) {
       var a = new byte[(int)size];
       for (int i = 0; i < (int)size; i++) {
@@ -3191,8 +3200,18 @@ namespace Oculus.Platform
     [DllImport(DLL_NAME, CallingConvention=CallingConvention.Cdecl, EntryPoint="ovr_RichPresenceOptions_SetDeeplinkMessageOverride")]
     private static extern void ovr_RichPresenceOptions_SetDeeplinkMessageOverride_Native(IntPtr handle, IntPtr value);
 
+<<<<<<< HEAD
     [DllImport(DLL_NAME, CallingConvention=CallingConvention.Cdecl)]
     public static extern void ovr_RichPresenceOptions_SetEndTime(IntPtr handle, DateTime value);
+=======
+    public static void ovr_RichPresenceOptions_SetEndTime(IntPtr handle, DateTime value) {
+      ulong value_native = DateTimeToNative(value);
+      ovr_RichPresenceOptions_SetEndTime_Native(handle, value_native);
+    }
+
+    [DllImport(DLL_NAME, CallingConvention=CallingConvention.Cdecl, EntryPoint="ovr_RichPresenceOptions_SetEndTime")]
+    private static extern void ovr_RichPresenceOptions_SetEndTime_Native(IntPtr handle, ulong value);
+>>>>>>> master
 
     [DllImport(DLL_NAME, CallingConvention=CallingConvention.Cdecl)]
     public static extern void ovr_RichPresenceOptions_SetExtraContext(IntPtr handle, RichPresenceExtraContext value);
@@ -3215,8 +3234,18 @@ namespace Oculus.Platform
     [DllImport(DLL_NAME, CallingConvention=CallingConvention.Cdecl)]
     public static extern void ovr_RichPresenceOptions_SetMaxCapacity(IntPtr handle, uint value);
 
+<<<<<<< HEAD
     [DllImport(DLL_NAME, CallingConvention=CallingConvention.Cdecl)]
     public static extern void ovr_RichPresenceOptions_SetStartTime(IntPtr handle, DateTime value);
+=======
+    public static void ovr_RichPresenceOptions_SetStartTime(IntPtr handle, DateTime value) {
+      ulong value_native = DateTimeToNative(value);
+      ovr_RichPresenceOptions_SetStartTime_Native(handle, value_native);
+    }
+
+    [DllImport(DLL_NAME, CallingConvention=CallingConvention.Cdecl, EntryPoint="ovr_RichPresenceOptions_SetStartTime")]
+    private static extern void ovr_RichPresenceOptions_SetStartTime_Native(IntPtr handle, ulong value);
+>>>>>>> master
 
     [DllImport(DLL_NAME, CallingConvention=CallingConvention.Cdecl)]
     public static extern IntPtr ovr_RoomOptions_Create();

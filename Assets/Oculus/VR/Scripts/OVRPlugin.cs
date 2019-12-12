@@ -43,7 +43,11 @@ public static class OVRPlugin
 #if OVRPLUGIN_UNSUPPORTED_PLATFORM
 	public static readonly System.Version wrapperVersion = _versionZero;
 #else
+<<<<<<< HEAD
 	public static readonly System.Version wrapperVersion = OVRP_1_42_0.version;
+=======
+	public static readonly System.Version wrapperVersion = OVRP_1_43_0.version;
+>>>>>>> master
 #endif
 
 #if !OVRPLUGIN_UNSUPPORTED_PLATFORM
@@ -425,6 +429,11 @@ public static class OVRPlugin
 		ShapeFlag_Cubemap = unchecked((int)OverlayShape.Cubemap << OverlayShapeFlagShift),
 		ShapeFlag_OffcenterCubemap = unchecked((int)OverlayShape.OffcenterCubemap << OverlayShapeFlagShift),
 		ShapeFlagRangeMask = unchecked((int)0xF << OverlayShapeFlagShift),
+<<<<<<< HEAD
+=======
+
+		Hidden = unchecked((int)0x000000200),
+>>>>>>> master
 	}
 
 	[StructLayout(LayoutKind.Sequential)]
@@ -1514,7 +1523,11 @@ public static class OVRPlugin
 
 	public static bool EnqueueSubmitLayer(bool onTop, bool headLocked, bool noDepthBufferTesting, IntPtr leftTexture, IntPtr rightTexture, int layerId, int frameIndex, Posef pose, Vector3f scale, int layerIndex = 0, OverlayShape shape = OverlayShape.Quad,
 										bool overrideTextureRectMatrix = false, TextureRectMatrixf textureRectMatrix = default(TextureRectMatrixf), bool overridePerLayerColorScaleAndOffset = false, Vector4 colorScale = default(Vector4), Vector4 colorOffset = default(Vector4),
+<<<<<<< HEAD
 										bool expensiveSuperSample = false)
+=======
+										bool expensiveSuperSample = false, bool hidden = false)
+>>>>>>> master
 	{
 #if OVRPLUGIN_UNSUPPORTED_PLATFORM
 		return false;
@@ -1533,6 +1546,11 @@ public static class OVRPlugin
 				flags |= (uint)OverlayFlag.NoDepth;
 			if (expensiveSuperSample)
 				flags |= (uint)OverlayFlag.ExpensiveSuperSample;
+<<<<<<< HEAD
+=======
+			if (hidden)
+				flags |= (uint)OverlayFlag.Hidden;
+>>>>>>> master
 
 			if (shape == OverlayShape.Cylinder || shape == OverlayShape.Cubemap)
 			{
@@ -3461,6 +3479,14 @@ public static class OVRPlugin
 #if OVRPLUGIN_UNSUPPORTED_PLATFORM
 		return false;
 #else
+<<<<<<< HEAD
+=======
+#if USING_XR_SDK
+		OculusXRPlugin.SetColorScale(colorScale.x, colorScale.y, colorScale.z, colorScale.w);
+		OculusXRPlugin.SetColorOffset(colorOffset.x, colorOffset.y, colorOffset.z, colorOffset.w);
+		return true;
+#else
+>>>>>>> master
 		if (version >= OVRP_1_31_0.version)
 		{
 			Bool ovrpApplyToAllLayers = applyToAllLayers ? Bool.True : Bool.False;
@@ -3471,6 +3497,10 @@ public static class OVRPlugin
 			return false;
 		}
 #endif
+<<<<<<< HEAD
+=======
+#endif
+>>>>>>> master
 	}
 
 	public static bool AddCustomMetadata(string name, string param = "")
@@ -4769,6 +4799,17 @@ public static class OVRPlugin
 		public static extern Result ovrp_GetAdaptiveGpuPerformanceScale2(ref float adaptiveGpuPerformanceScale);
 	}
 
+<<<<<<< HEAD
+=======
+	private static class OVRP_1_43_0
+	{
+		public static readonly System.Version version = new System.Version(1, 43, 0);
+
+		[DllImport(pluginName, CallingConvention = CallingConvention.Cdecl)]
+		public static extern Result ovrp_GetAdaptiveGpuPerformanceScale2(ref float adaptiveGpuPerformanceScale);
+	}
+
+>>>>>>> master
 #endif // !OVRPLUGIN_UNSUPPORTED_PLATFORM
 
 }

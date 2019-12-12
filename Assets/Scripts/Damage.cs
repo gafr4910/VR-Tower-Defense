@@ -24,6 +24,9 @@ public class Damage : MonoBehaviour
         if (col.gameObject.tag == "Enemy")
         {
             Destroy(col.gameObject);
+            AudioSource audio = GetComponent<AudioSource>();
+
+            audio.Play();  // plays sound when collided
 
         }
 
