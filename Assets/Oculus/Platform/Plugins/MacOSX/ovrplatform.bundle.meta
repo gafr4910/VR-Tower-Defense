@@ -1,28 +1,17 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 926602cc248723549b2142278d234dab
-=======
-guid: 987d38b1f9cbbf7428badb6de73cfc92
->>>>>>> master
 folderAsset: yes
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
   iconMap: {}
   executionOrder: {}
+  defineConstraints: []
   isPreloaded: 0
   isOverridable: 0
+  isExplicitlyReferenced: 0
+  validateReferences: 1
   platformData:
-  - first:
-      '': OSXIntel
-    second:
-      enabled: 1
-      settings: {}
-  - first:
-      '': OSXIntel64
-    second:
-      enabled: 1
-      settings: {}
   - first:
       Any: 
     second:
