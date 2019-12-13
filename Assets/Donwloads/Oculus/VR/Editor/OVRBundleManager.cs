@@ -314,6 +314,17 @@ public class OVRBundleManager
 					// Each asset is keyed by full path as a unique identifier
 					if (!uniqueAssetInSceneBundle.ContainsKey(asset))
 					{
+<<<<<<< HEAD
+						uniqueAssetInSceneBundle[asset] = assetParent;
+
+						if (assetParent != "resources")
+						{
+							if (!extToAssetList.ContainsKey(ext))
+							{
+								extToAssetList[ext] = new List<string>();
+							}
+							extToAssetList[ext].Add(asset);
+=======
 						var assetObject = (UnityEngine.Object)AssetDatabase.LoadAssetAtPath(asset, typeof(UnityEngine.Object));
 						if (assetObject == null || (assetObject.hideFlags & HideFlags.DontSaveInBuild) == 0)
 						{
@@ -327,6 +338,7 @@ public class OVRBundleManager
 								}
 								extToAssetList[ext].Add(asset);
 							}
+>>>>>>> master
 						}
 					}
 				}
@@ -558,6 +570,8 @@ public class OVRBundleManager
 		return false;
 	}
 
+<<<<<<< HEAD
+=======
 	public static bool UninstallAPK()
 	{
 		OVRBundleTool.PrintLog("Uninstalling Application . . .");
@@ -583,6 +597,7 @@ public class OVRBundleManager
 		return false;
 	}
 
+>>>>>>> master
 	public static void DeleteRemoteAssetBundles()
 	{
 		OVRADBTool adbTool = new OVRADBTool(OVRConfig.Instance.GetAndroidSDKPath());

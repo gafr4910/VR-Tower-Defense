@@ -34,6 +34,11 @@ public enum PlayModeState
 
 class ONSPPropagationSerializationManager
 {
+<<<<<<< HEAD
+    private static PlayModeState _currentState = PlayModeState.Stopped;
+
+=======
+>>>>>>> master
     static ONSPPropagationSerializationManager()
     {
         EditorSceneManager.sceneSaving += OnSceneSaving;

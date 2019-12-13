@@ -69,6 +69,11 @@ namespace OculusSampleFramework
         [SerializeField]
         int m_obstructionLayer;
 
+<<<<<<< HEAD
+        [SerializeField]
+        GameObject m_player;
+=======
+>>>>>>> master
         DistanceGrabber m_otherHand;
 
         protected DistanceGrabbable m_target;
@@ -150,7 +155,10 @@ namespace OculusSampleFramework
 
                 m_grabbedObj = closestGrabbable;
                 m_grabbedObj.GrabBegin(this, closestGrabbableCollider);
+<<<<<<< HEAD
+=======
                 SetPlayerIgnoreCollision(m_grabbedObj.gameObject, true);
+>>>>>>> master
 
                 m_movingObjectToHand = true;
                 m_lastPos = transform.position;
@@ -194,6 +202,8 @@ namespace OculusSampleFramework
             {
                 return;
             }
+<<<<<<< HEAD
+=======
 			// Set up offsets for grabbed object desired position relative to hand.
             m_grabbedObjectPosOff = m_gripTransform.localPosition;
             if (m_grabbedObj.snapOffset)
@@ -209,6 +219,7 @@ namespace OculusSampleFramework
                 m_grabbedObjectRotOff = m_grabbedObj.snapOffset.rotation * m_grabbedObjectRotOff;
                 if (m_controller == OVRInput.Controller.LTouch) m_grabbedObjectRotOff = Quaternion.Inverse(m_grabbedObjectRotOff);
             }
+>>>>>>> master
 
             Rigidbody grabbedRigidbody = m_grabbedObj.grabbedRigidbody;
             Vector3 grabbablePosition = pos + rot * m_grabbedObjectPosOff;

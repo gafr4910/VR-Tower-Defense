@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 //
+=======
+//
+>>>>>>> master
 // OvrAvatar eye lens shader
 //
 // Generates glint on the eye lens of expressive avatars

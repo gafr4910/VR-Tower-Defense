@@ -24,9 +24,12 @@ public class OVRBundleTool : EditorWindow
 	private bool showBundleManagement = false;
 	private bool showOther = false;
 
+<<<<<<< HEAD
+=======
 	// Needed to ensure that APK checking does happen during editor start up, but will still happen when the window is opened/updated
 	private static bool panelInitialized = false;
 
+>>>>>>> master
 	private enum ApkStatus
 	{
 		UNKNOWN,
@@ -88,8 +91,14 @@ public class OVRBundleTool : EditorWindow
 
 	public static void InitializePanel()
 	{
+<<<<<<< HEAD
+		GetScenesFromBuildSettings();
+		CheckForTransitionAPK();
+
+=======
 		panelInitialized = true;
 		GetScenesFromBuildSettings();
+>>>>>>> master
 		EditorBuildSettings.sceneListChanged += GetScenesFromBuildSettings;
 	}
 
@@ -97,12 +106,15 @@ public class OVRBundleTool : EditorWindow
 	{
 		this.titleContent.text = "OVR Scene Quick Preview";
 
+<<<<<<< HEAD
+=======
 		if (panelInitialized)
 		{
 			CheckForTransitionAPK();
 			panelInitialized = false;
 		}
 
+>>>>>>> master
 		if (logBoxStyle == null)
 		{
 			logBoxStyle = new GUIStyle();
@@ -290,6 +302,8 @@ public class OVRBundleTool : EditorWindow
 					OpenBuildSettingsWindow();
 				}
 
+<<<<<<< HEAD
+=======
 				GUIContent uninstallTxt = new GUIContent("Uninstall APK");
 				var uninstallBtnRt = GUILayoutUtility.GetRect(uninstallTxt, GUI.skin.button, GUILayout.ExpandWidth(true));
 				if (GUI.Button(uninstallBtnRt, uninstallTxt))
@@ -298,6 +312,7 @@ public class OVRBundleTool : EditorWindow
 					CheckForTransitionAPK();
 				}
 
+>>>>>>> master
 				GUIContent clearLogTxt = new GUIContent("Clear Log");
 				var clearLogBtnRt = GUILayoutUtility.GetRect(clearLogTxt, GUI.skin.button, GUILayout.ExpandWidth(true));
 				if (GUI.Button(clearLogBtnRt, clearLogTxt))

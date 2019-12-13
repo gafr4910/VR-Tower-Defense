@@ -803,6 +803,12 @@ public class LocomotionTeleport : MonoBehaviour
 	/// <returns></returns>
 	public Quaternion GetHeadRotationY()
 	{
+<<<<<<< HEAD
+#if UNITY_2017_2_OR_NEWER
+		Quaternion headRotation = UnityEngine.XR.InputTracking.GetLocalRotation(UnityEngine.XR.XRNode.Head);
+#else
+		Quaternion headRotation = InputTracking.GetLocalRotation(VRNode.Head);
+=======
 		Quaternion headRotation = Quaternion.identity;
 #if UNITY_2019_1_OR_NEWER
 		UnityEngine.XR.InputDevice device = UnityEngine.XR.InputDevices.GetDeviceAtXRNode(UnityEngine.XR.XRNode.Head);
@@ -823,6 +829,7 @@ public class LocomotionTeleport : MonoBehaviour
 		}
 #else
 		headRotation = InputTracking.GetLocalRotation(VRNode.Head);
+>>>>>>> master
 #endif
 		Vector3 euler = headRotation.eulerAngles;
 		euler.x = 0;

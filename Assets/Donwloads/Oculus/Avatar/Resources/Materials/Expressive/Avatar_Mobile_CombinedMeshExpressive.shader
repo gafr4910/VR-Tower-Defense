@@ -44,8 +44,13 @@ Shader "OvrAvatar/Avatar_Mobile_CombinedMeshExpressive"
         _MaskColorSclera("Sclera Color", Color) = (0.0,0.0,0.0,1.0)
         _MaskColorGums("Gums Color", Color) = (0.0,0.0,0.0,1.0)
         _MaskColorTeeth("Teeth Color", Color) = (0.0,0.0,0.0,1.0)
+<<<<<<< HEAD
 
         [HideInInspector] _SrcBlend("", Float) = 1
+=======
+
+        [HideInInspector] _SrcBlend("", Float) = 1
+>>>>>>> master
         [HideInInspector] _DstBlend("", Float) = 0
     }
 
@@ -205,6 +210,7 @@ Shader "OvrAvatar/Avatar_Mobile_CombinedMeshExpressive"
                 _MaskColorTeeth.rgb = LinearToGammaSpace(_MaskColorTeeth.rgb);
 #endif
 
+<<<<<<< HEAD
                 // Calculate color masks
                 half irisScalar = abs(roughnessTex.b * COLOR_MULTIPLIER - MASK_INDEX_IRIS) <= MASK_SLICE_THRESHOLD ? roughnessTex.g : 0.0f;
                 half lipsScalar = abs(roughnessTex.b * COLOR_MULTIPLIER - MASK_INDEX_LIPS) <= MASK_SLICE_THRESHOLD ? roughnessTex.g : 0.0f;
@@ -221,6 +227,24 @@ Shader "OvrAvatar/Avatar_Mobile_CombinedMeshExpressive"
                 half3 maskTeeth = teethScalar * (_MaskColorTeeth - baseColor.rgb);
                 half3 maskGums = gumsScalar * (_MaskColorGums - baseColor.rgb);
                 // Lip tint excluded from color mask as it lerps with texture color
+=======
+                // Calculate color masks
+                half irisScalar = abs(roughnessTex.b * COLOR_MULTIPLIER - MASK_INDEX_IRIS) <= MASK_SLICE_THRESHOLD ? roughnessTex.g : 0.0f;
+                half lipsScalar = abs(roughnessTex.b * COLOR_MULTIPLIER - MASK_INDEX_LIPS) <= MASK_SLICE_THRESHOLD ? roughnessTex.g : 0.0f;
+                half browsScalar = abs(roughnessTex.b * COLOR_MULTIPLIER - MASK_INDEX_BROWS) <= MASK_SLICE_THRESHOLD ? roughnessTex.g : 0.0f;;
+                half lashesScalar = abs(roughnessTex.b * COLOR_MULTIPLIER - MASK_INDEX_LASHES) <= MASK_SLICE_THRESHOLD ? roughnessTex.g : 0.0f;
+                half scleraScalar = abs(roughnessTex.b * COLOR_MULTIPLIER - MASK_INDEX_SCLERA) <= MASK_SLICE_THRESHOLD ? roughnessTex.g : 0.0f;
+                half teethScalar = abs(roughnessTex.b * COLOR_MULTIPLIER - MASK_INDEX_TEETH) <= MASK_SLICE_THRESHOLD ? roughnessTex.g : 0.0f;;
+                half gumsScalar = abs(roughnessTex.b * COLOR_MULTIPLIER - MASK_INDEX_GUMS) <= MASK_SLICE_THRESHOLD ? roughnessTex.g : 0.0f;;
+
+                half3 maskIris = irisScalar * (_MaskColorIris * IRIS_BRIGHTNESS_MODIFIER - baseColor.rgb);
+                half3 maskBrows = browsScalar * (_MaskColorBrows - baseColor.rgb);
+                half3 maskLashes = lashesScalar * (_MaskColorLashes - baseColor.rgb);
+                half3 maskSclera = scleraScalar * (_MaskColorSclera * SCLERA_BRIGHTNESS_MODIFIER - baseColor.rgb);
+                half3 maskTeeth = teethScalar * (_MaskColorTeeth - baseColor.rgb);
+                half3 maskGums = gumsScalar * (_MaskColorGums - baseColor.rgb);
+                // Lip tint excluded from color mask as it lerps with texture color
+>>>>>>> master
                 half3 colorMask = maskIris + maskBrows + maskLashes + maskSclera + maskTeeth + maskGums;
 
                 // Diffuse intensity from array
@@ -229,6 +253,7 @@ Shader "OvrAvatar/Avatar_Mobile_CombinedMeshExpressive"
                 // Lerp diffuseIntensity with roughness map
                 diffuseIntensity = lerp(diffuseIntensity, ONE, roughnessTex.a);
 
+<<<<<<< HEAD
                 // Brows and lashes modify DiffuseIntensity
                 diffuseIntensity *= ONE - (saturate(browsScalar + lashesScalar) * BROWS_LASHES_DIFFUSEINTENSITY);
                 
@@ -244,6 +269,23 @@ Shader "OvrAvatar/Avatar_Mobile_CombinedMeshExpressive"
                 // Smoothness multiplier on lip region
                 albedoColor.rgb += lipsScalar * reflectionColor * (_LipSmoothness * LIP_SMOOTHNESS_MULTIPLIER) *
                     lerp(LIP_SMOOTHNESS_MIN_NDOTL, ONE, NdotL);
+=======
+                // Brows and lashes modify DiffuseIntensity
+                diffuseIntensity *= ONE - (saturate(browsScalar + lashesScalar) * BROWS_LASHES_DIFFUSEINTENSITY);
+                
+                // Add in diffuseIntensity and main lighting to base color
+                baseColor.rgb += diffuseIntensity * NdotL * _LightColor0;
+
+                // Add in color mask to base color if this is the head component (index == 0)
+                baseColor.rgb += clamp(ONE - componentIndex, 0, ONE) * colorMask;
+
+                // Multiply texture with base color with special case for lips
+                albedoColor.rgb = lerp(albedoColor.rgb * baseColor.rgb, _MaskColorLips.rgb, lipsScalar * _MaskColorLips.a);
+
+                // Smoothness multiplier on lip region
+                albedoColor.rgb += lipsScalar * reflectionColor * (_LipSmoothness * LIP_SMOOTHNESS_MULTIPLIER) *
+                    lerp(LIP_SMOOTHNESS_MIN_NDOTL, ONE, NdotL);
+>>>>>>> master
 
                 // Reflection from cubemap
                 albedoColor.rgb += reflectionColor * (roughnessTex.a * _ReflectionIntensity[componentIndex]) * NdotL;
@@ -265,9 +307,15 @@ Shader "OvrAvatar/Avatar_Mobile_CombinedMeshExpressive"
 #endif
                 albedoColor.rgb = saturate(albedoColor.rgb);
 
+<<<<<<< HEAD
                 // Set alpha, with special case for lashes
                 albedoColor.a = saturate(albedoColor.a * lerp(ONE, _Alpha, ONE - lashesScalar) * _Alpha);
 
+=======
+                // Set alpha, with special case for lashes
+                albedoColor.a = saturate(albedoColor.a * lerp(ONE, _Alpha, ONE - lashesScalar) * _Alpha);
+
+>>>>>>> master
                 // Clip fragments in the lash region for clean lash transparency
                 clip(albedoColor.a - lerp(0.0, ALPHA_CLIP_THRESHOLD, lashesScalar));
 

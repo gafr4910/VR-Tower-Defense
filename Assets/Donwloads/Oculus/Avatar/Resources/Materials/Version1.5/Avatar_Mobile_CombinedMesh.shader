@@ -38,7 +38,11 @@ Shader "OvrAvatar/Avatar_Mobile_CombinedMesh"
         [HideInInspector] _MouthEffectDistance("Mouth Effect Distance", Float) = 0.03
         [HideInInspector] _MouthEffectScale("Mouth Effect Scaler", Float) = 1
 
+<<<<<<< HEAD
         [HideInInspector] _SrcBlend("", Float) = 1
+=======
+        [HideInInspector] _SrcBlend("", Float) = 1
+>>>>>>> master
         [HideInInspector] _DstBlend("", Float) = 0
     }
 
@@ -195,9 +199,15 @@ Shader "OvrAvatar/Avatar_Mobile_CombinedMesh"
 #endif
                 albedoColor.rgb = saturate(albedoColor.rgb);
 
+<<<<<<< HEAD
                 // Set alpha, with special case for lashes
                 albedoColor.a *= _Alpha;
 
+=======
+                // Set alpha, with special case for lashes
+                albedoColor.a *= _Alpha;
+
+>>>>>>> master
                 // Return clamped final color
                 return albedoColor;
             }

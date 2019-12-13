@@ -57,7 +57,10 @@ public class OVRManagerEditor : Editor
 			OVRProjectConfig.CommitProjectConfig(projectConfig);
 		}
 		EditorGUI.indentLevel--;
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
 		EditorGUILayout.Space();
 #endif
 

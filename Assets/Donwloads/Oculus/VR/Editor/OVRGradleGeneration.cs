@@ -53,11 +53,17 @@ public class OVRGradleGeneration
 	static private System.DateTime buildStartTime;
 	static private System.Guid buildGuid;
 
+<<<<<<< HEAD
+	private const string prefName = "OVRAutoIncrementVersionCode_Enabled";
+	private const string menuItemAutoIncVersion = "Oculus/Tools/Auto Increment Version Code";
+	static bool autoIncrementVersion = false;
+=======
 #if UNITY_ANDROID
 	private const string prefName = "OVRAutoIncrementVersionCode_Enabled";
 	private const string menuItemAutoIncVersion = "Oculus/Tools/Auto Increment Version Code";
 	static bool autoIncrementVersion = false;
 #endif
+>>>>>>> master
 
 	static OVRGradleGeneration()
 	{
@@ -112,9 +118,13 @@ public class OVRGradleGeneration
 
 		OVRPlugin.AddCustomMetadata("build_guid", buildGuid.ToString());
 		OVRPlugin.AddCustomMetadata("target_platform", report.summary.platform.ToString());
+<<<<<<< HEAD
+		OVRPlugin.AddCustomMetadata("scripting_runtime_version", UnityEditor.PlayerSettings.scriptingRuntimeVersion.ToString());
+=======
 #if !UNITY_2019_3_OR_NEWER
 		OVRPlugin.AddCustomMetadata("scripting_runtime_version", UnityEditor.PlayerSettings.scriptingRuntimeVersion.ToString());
 #endif
+>>>>>>> master
 		if (report.summary.platform == UnityEditor.BuildTarget.StandaloneWindows
 			|| report.summary.platform == UnityEditor.BuildTarget.StandaloneWindows64)
 		{
@@ -131,7 +141,11 @@ public class OVRGradleGeneration
 	public void OnPostGenerateGradleAndroidProject(string path)
 	{
 		UnityEngine.Debug.Log("OVRGradleGeneration triggered.");
+<<<<<<< HEAD
+#if UNITY_ANDROID
+=======
 
+>>>>>>> master
 		var targetOculusPlatform = new List<string>();
 		if (OVRDeviceSelector.isTargetDeviceGearVrOrGo)
 		{
@@ -173,8 +187,15 @@ public class OVRGradleGeneration
 		}
 
 		PatchAndroidManifest(path);
+<<<<<<< HEAD
+#endif
 	}
 
+#if UNITY_ANDROID
+=======
+	}
+
+>>>>>>> master
 	public void PatchAndroidManifest(string path)
 	{
 		string manifestFolder = Path.Combine(path, "src/main");
@@ -244,6 +265,8 @@ public class OVRGradleGeneration
 						applicationNode.SetAttribute("icon", androidNamepsaceURI, "@mipmap/app_icon");
 					}
 
+<<<<<<< HEAD
+=======
 					// Check for VR tag, if missing, append it
 					bool vrTagFound = false;
 					XmlNodeList appNodeList = applicationNode.ChildNodes;
@@ -264,6 +287,7 @@ public class OVRGradleGeneration
 						applicationNode.AppendChild(vrTag); ;
 					}
 
+>>>>>>> master
 					// Disable allowBackup in manifest and add Android NSC XML file
 					OVRProjectConfig projectConfig = OVRProjectConfig.GetProjectConfig();
 					if (projectConfig != null)
@@ -302,8 +326,14 @@ public class OVRGradleGeneration
 			UnityEngine.Debug.LogError(e.Message);
 		}
 	}
+<<<<<<< HEAD
+#endif
+
+					public void OnPostprocessBuild(BuildReport report)
+=======
 
 	public void OnPostprocessBuild(BuildReport report)
+>>>>>>> master
 	{
 #if UNITY_ANDROID
 		if(autoIncrementVersion)
@@ -479,6 +509,12 @@ public class OVRGradleGeneration
 	}
 #endif
 #else
+<<<<<<< HEAD
+		{
+#endif
+		}
+=======
 {
 #endif
 }
+>>>>>>> master

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
 guid: f5b1c127a92bb426f8f5636c5ea8ab34
+<<<<<<< HEAD
+DefaultImporter:
+  externalObjects: {}
+=======
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -27,6 +31,7 @@ PluginImporter:
     second:
       enabled: 1
       settings: {}
+>>>>>>> master
   userData: 
   assetBundleName: 
   assetBundleVariant: 
