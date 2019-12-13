@@ -45,7 +45,7 @@ public class EnemyControl : MonoBehaviour
         player = GameObject.Find("OVRPlayerController");
         CameraMovement pCam = player.GetComponent<CameraMovement>();
 
-        pCam.damaged = true;
+        //pCam.damaged = true;
 
         if (health > 0)
         {

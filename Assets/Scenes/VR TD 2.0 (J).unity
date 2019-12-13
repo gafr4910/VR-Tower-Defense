@@ -14438,6 +14438,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5896701870815004020, guid: cdd25694e888802408bdcdd423f7d5c8,
+        type: 3}
+      propertyPath: Weapons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5896701870815004020, guid: cdd25694e888802408bdcdd423f7d5c8,
+        type: 3}
+      propertyPath: Weapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1643897404547717192, guid: 9a32185cf6ef0440e84c17455782a5a3,
+        type: 3}
+    - target: {fileID: -5896701870815004020, guid: cdd25694e888802408bdcdd423f7d5c8,
+        type: 3}
+      propertyPath: Weapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 957660345986568900, guid: dacd2336d4cf845f2967c23601cfac48,
+        type: 3}
+    - target: {fileID: -5896701870815004020, guid: cdd25694e888802408bdcdd423f7d5c8,
+        type: 3}
+      propertyPath: Weapons.Array.data[2]
+      value: 
+      objectReference: {fileID: 100000, guid: cdd25694e888802408bdcdd423f7d5c8, type: 3}
     m_RemovedComponents:
     - {fileID: -2162963611973617891, guid: cdd25694e888802408bdcdd423f7d5c8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cdd25694e888802408bdcdd423f7d5c8, type: 3}
@@ -20752,6 +20774,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837631708, guid: 9a32185cf6ef0440e84c17455782a5a3, type: 3}
+      propertyPath: Weapons.Array.size
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a32185cf6ef0440e84c17455782a5a3, type: 3}
