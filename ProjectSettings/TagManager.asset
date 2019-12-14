@@ -9,6 +9,9 @@ TagManager:
   - Entrance
   - Projectile
   - Weapon
+  - Fire
+  - Zombie
+  - Mace
   layers:
   - Default
   - TransparentFX
