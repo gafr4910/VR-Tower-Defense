@@ -7,9 +7,11 @@ public class PlayAgain : MonoBehaviour
 {
     void Update()
     {
-        if(Input.anyKey)
+        Debug.Log("end scene");
+        if (OVRInput.GetDown(OVRInput.Button.Three) || Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("VR TD(G)");
+            Debug.Log("ended");
+            SceneManager.LoadScene("OculusTestArea");
         }
     }
 }

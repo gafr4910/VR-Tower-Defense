@@ -11,12 +11,15 @@ public class EnemyController : MonoBehaviour
 
 
 
-
+    public GameObject leftHand;
+    public GameObject rightHand;
     private AudioSource DeathSound;
     public bool isDead = false;
     private NavMeshAgent Mob;
     private GameObject Player;
     public float MobDistanceRun = 100f;
+    public float attackTime = 5f;
+    public float lastAttack;
 
 
 
@@ -27,6 +30,7 @@ public class EnemyController : MonoBehaviour
         Player = GameObject.FindWithTag("Player");
         DeathSound = GetComponent<AudioSource>();
         Mob = GetComponent<NavMeshAgent>();
+        lastAttack = Time.time;
     }
 
     // Update is called once per frame
@@ -36,14 +40,19 @@ public class EnemyController : MonoBehaviour
 
         if(distance < MobDistanceRun && distance > 1.4f && isDead == false)
         {
+            leftHand.GetComponent<SphereCollider>().enabled = false;
+            rightHand.GetComponent<SphereCollider>().enabled = false;
             GetComponent<Animator>().SetBool("FarAway", true);
             Vector3 dirToPlayer = transform.position - Player.transform.position;
             Vector3 newPos = transform.position - dirToPlayer;
             Mob.SetDestination(newPos);
         }else if (distance <= 1.4f)
         {
+
             GetComponent<Animator>().SetTrigger("Attack");
             GetComponent<Animator>().SetBool("FarAway", false);
+            leftHand.GetComponent<SphereCollider>().enabled = true;
+            rightHand.GetComponent<SphereCollider>().enabled = true;
         }
 
     }

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class CameraMovement : MonoBehaviour
 {
 
-    public GameObject parent;
+    // public GameObject parent;
     // public GameObject teleportPreview;
     // public GameObject mocapObject;
     public Image damageImage;
@@ -32,19 +32,19 @@ public class CameraMovement : MonoBehaviour
     void Update()
     {
         // When we have a horizontal value
-        if (Input.GetAxis("Horizontal") != 0) 
-        {
+        //if (Input.GetAxis("Horizontal") != 0) 
+        //{
             // Move the attached parent based on the right vector of this object multiplied by the horizontal axis value
-            parent.transform.position += (transform.right) * Input.GetAxis("Horizontal") *0.25f;
-        }
+            //parent.transform.position += (transform.right) * Input.GetAxis("Horizontal") *0.25f;
+        //}
 
         // When we have a vertical value
-        if (Input.GetAxis("Vertical") != 0) 
-        {
+        //if (Input.GetAxis("Vertical") != 0) 
+        //{
             // Move the attached parent based on the right vector of this object multiplied by the horizontal axis value
-            parent.transform.position += (transform.forward) * Input.GetAxis("Vertical") * 0.25f;
+            //parent.transform.position += (transform.forward) * Input.GetAxis("Vertical") * 0.25f;
 
-        }
+        //}
 
         // if(Input.GetAxis("Fire1") != 0) 
         // {
