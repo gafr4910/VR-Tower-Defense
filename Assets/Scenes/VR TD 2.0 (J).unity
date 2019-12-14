@@ -8619,9 +8619,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 806125438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e33700c1d4dcfb746a3968dd50bd9e99, type: 3}
+  m_Script: {fileID: 11500000, guid: f7b6a2f21c32f4b26a1c2a3b52464943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Weapons: []
 --- !u!1001 &810255279
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14180,9 +14181,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1370424247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e33700c1d4dcfb746a3968dd50bd9e99, type: 3}
+  m_Script: {fileID: 11500000, guid: f7b6a2f21c32f4b26a1c2a3b52464943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Weapons: []
 --- !u!1001 &1370763549
 PrefabInstance:
   m_ObjectHideFlags: 0
